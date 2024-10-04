@@ -1,7 +1,7 @@
 ---
 title: "Lab 02 - Global plastic waste"
 <<<<<<< HEAD
-author: "Team Name: Lucy R, User2, User3, User4, User5 and User6"
+author: "Team Name: Lucy, Zazzie, User2, User3, User4, User5 and User6"
 =======
 author: "Team Name: User1, User2, User3, User4, User5 and User6"
 >>>>>>> a5032d67416c5c45988a3af9727c53dea52f6cbc
