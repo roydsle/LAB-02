@@ -86,7 +86,10 @@ plastic_data_all %>%
 
 ```{r Ex1, message = FALSE}
 # Write your code here to answer exercise 1
-
+data1 %>%
+     left_join(data4, by = "name") %>%
+     count(region, sort = TRUE) %>%
+     arrange(region)
 
 
 ```
