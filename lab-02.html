@@ -434,7 +434,51 @@ plastic_data_all %&gt;%
 </div>
 <div id="ex-2." class="section level3">
 <h3>Ex 2.</h3>
-<pre class="r"><code># Write your code here to answer exercise 2</code></pre>
+<pre class="r"><code># Write your code here to answer exercise 2
+
+#pt1
+plastic_data_all &lt;- mutate(plastic_data_all, 
+    total_mismanage_plastic = mismanaged_plastic * population) %&gt;%
+  select(code, name, total_mismanage_plastic, everything())
+
+#pt2
+plastic_data_all %&gt;%
+    group_by(region) %&gt;%
+    summarise(
+    mean_total_waste = mean(total_mismanage_plastic)
+    )</code></pre>
+<pre><code>## # A tibble: 6 × 2
+##   region                          mean_total_waste
+##   &lt;chr&gt;                                      &lt;dbl&gt;
+## 1 Africa                                   320729.
+## 2 Asia                                    1026059.
+## 3 Europe                                    38180.
+## 4 Latin America and The Caribbean          193450.
+## 5 North America                            147190.
+## 6 Oceania                                   14577.</code></pre>
+<pre class="r"><code>#pt3
+
+plastic_data_all %&gt;%
+  group_by(region) %&gt;%
+  summarise(
+  min_total_waste = min(total_mismanage_plastic)) %&gt;%
+  arrange(min_total_waste) %&gt;%
+  head(n=1)</code></pre>
+<pre><code>## # A tibble: 1 × 2
+##   region min_total_waste
+##   &lt;chr&gt;            &lt;dbl&gt;
+## 1 Africa               0</code></pre>
+<pre class="r"><code>plastic_data_all %&gt;%
+  group_by(region) %&gt;%
+  summarise(
+  max_total_waste = max(total_mismanage_plastic)) %&gt;%
+  arrange(max_total_waste) %&gt;%
+  head(n=1)</code></pre>
+<pre><code>## # A tibble: 1 × 2
+##   region  max_total_waste
+##   &lt;chr&gt;             &lt;dbl&gt;
+## 1 Oceania         128530.</code></pre>
+<pre class="r"><code>#interpreted question as minimum/max of one country in that region of the total_mismanage_waste)</code></pre>
 </div>
 <div id="ex-3." class="section level3">
 <h3>Ex 3.</h3>

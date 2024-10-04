@@ -98,6 +98,35 @@ plastic_data_all %>%
 ```{r Ex2, message = FALSE}
 # Write your code here to answer exercise 2
 
+#pt1
+plastic_data_all <- mutate(plastic_data_all, 
+	total_mismanage_plastic = mismanaged_plastic * population) %>%
+  select(code, name, total_mismanage_plastic, everything())
+
+#pt2
+plastic_data_all %>%
+	group_by(region) %>%
+	summarise(
+	mean_total_waste = mean(total_mismanage_plastic)
+	)
+
+#pt3
+
+plastic_data_all %>%
+  group_by(region) %>%
+  summarise(
+  min_total_waste = min(total_mismanage_plastic)) %>%
+  arrange(min_total_waste) %>%
+  head(n=1)
+
+plastic_data_all %>%
+  group_by(region) %>%
+  summarise(
+  max_total_waste = max(total_mismanage_plastic)) %>%
+  arrange(max_total_waste) %>%
+  head(n=1)
+
+#interpreted question as minimum/max of one country in that region of the total_mismanage_waste)
 
 
 ```
