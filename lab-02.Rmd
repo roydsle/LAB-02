@@ -63,7 +63,8 @@ plastic_data_all <- data3 %>%
 
 # Member 1 (pair 1) write code to join your data to 'plastic_data_all':
 
-
+data4 <- read_excel("data/UN_country_region.xlsx")
+> view(data4 <- read_excel("data/UN_country_region.xlsx"))
 
 ```
 
