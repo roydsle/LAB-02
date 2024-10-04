@@ -367,6 +367,21 @@ library(readxl)</code></pre>
 <pre class="r"><code># Member 2 (pair 1) write code to load File 1 data here:
 
 data1 &lt;- read_csv(&quot;data/mismanaged-plastic-waste-per-capita.csv&quot;)
+
+# Member 4 (pair 2) write code to load File 2 data here:
+
+data2 &lt;- read_csv2(&quot;data/per-capita-ocean-plastic-waste.txt&quot;)
+
+
+
+
+# Member 6 (pair 3) write code to load File 3 data here:
+data3 &lt;- read_tsv(&quot;data/UN_country_population.tsv&quot;)
+
+
+# Member 1 (pair 1) write code to load File 4 data here:</code></pre>
+<pre class="r"><code># Member 2 (pair 1) write code to create object &#39;plastic_data_all&#39;:
+
 plastic_data_all &lt;- data1
 plastic_data_all %&gt;%
   head(n = 10)</code></pre>
@@ -383,35 +398,18 @@ plastic_data_all %&gt;%
 ##  8 Bahrain             BHR                0.636
 ##  9 Bangladesh          BGD                6.27 
 ## 10 Barbados            BRB                3.04</code></pre>
-<pre class="r"><code># Member 4 (pair 2) write code to load File 2 data here:
+<pre class="r"><code># Member 4 (pair 2) write code to join your data to &#39;plastic_data_all&#39;:
 
-data2 &lt;- read_csv2(&quot;data/per-capita-ocean-plastic-waste.txt&quot;)
 plastic_data_all &lt;- data2 %&gt;%
   select(-name) %&gt;%
   left_join(plastic_data_all, by = &quot;code&quot;)
 
 
+# Member 6 (pair 3) write code to join your data to &#39;plastic_data_all&#39;:
 
-# Member 6 (pair 3) write code to load File 3 data here:
-data3 &lt;- read_tsv(&quot;data/UN_country_population.tsv&quot;)
 plastic_data_all &lt;- data3 %&gt;%
   select(-name) %&gt;%
   right_join(plastic_data_all, by = &quot;code&quot;)
-
-# Member 1 (pair 1) write code to load File 4 data here:</code></pre>
-<pre class="r"><code># Member 2 (pair 1) write code to create object &#39;plastic_data_all&#39;:
-
-
-
-
-# Member 4 (pair 2) write code to join your data to &#39;plastic_data_all&#39;:
-
-
-
-
-# Member 6 (pair 3) write code to join your data to &#39;plastic_data_all&#39;:
-
-
 
 
 # Member 1 (pair 1) write code to join your data to &#39;plastic_data_all&#39;:</code></pre>
