@@ -20,7 +20,8 @@ library(readxl)
 
 read_csv("data/mismanaged-plastic-waste-per-capita.csv")
 plastic_waste <- read_csv("data/mismanaged-plastic-waste-per-capita.csv")
-
+plastic_waste %>%
+  head(n = 10)
 # Member 4 (pair 2) write code to load File 2 data here:
 
 
